@@ -3,18 +3,18 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
   <title>Blog Title</title>
   <subtitle>This is a longer description about your blog.</subtitle>
-  <link href="https://example.com/feed/feed.xml" rel="self" />
-  <link href="https://example.com/" />
+  <link href="https://example.com/ryn.cx-v2/feed/feed.xml" rel="self" />
+  <link href="https://example.com/ryn.cx-v2/" />
   <updated>2025-10-06T00:00:00Z</updated>
-  <id>https://example.com/</id>
+  <id>https://example.com/ryn.cx-v2/</id>
   <author>
     <name>Your Name</name>
   </author>
   <entry>
     <title>Blog Posts</title>
-    <link href="https://example.com/blog/blog-posts/" />
+    <link href="https://example.com/ryn.cx-v2/blog/blog-posts/" />
     <updated>2025-10-06T00:00:00Z</updated>
-    <id>https://example.com/blog/blog-posts/</id>
+    <id>https://example.com/ryn.cx-v2/blog/blog-posts/</id>
     <content type="html">&lt;p&gt;In the future I intend to have more blog posts, but at the moment I am quite busy and don&#39;t have anything interesting to write about that isn&#39;t just rehashing topics from my old blog that was published under a pseudonym.&lt;/p&gt;
 </content>
   </entry>
