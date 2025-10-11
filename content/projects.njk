@@ -1,0 +1,8 @@
+---js
+const eleventyNavigation = {
+	key: "Projects",
+	order: 2
+};
+---
+{% set projectslist = collections.projects  | sort(false, false, 'data.homepage') %}
+{% include "projectslist.njk" %}

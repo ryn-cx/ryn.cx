@@ -1,0 +1,40 @@
+{# Source: https://daisyui.com/components/list/?lang=en#list-third-column-wraps-to-next-row #}
+<ul class="list bg-base-100 rounded-box shadow-md">
+	{%- for project in projectslist | reverse %}
+		<li class="list-row">
+			<div>
+				<a href="{{ project.url }}">
+					{% if project.data.absolute_image_url or project.data.relative_image_url %}
+					<img class="size-25 rounded-box" alt="Picture of {{project.data.title}}" src="{{ project.data.absolute_image_url or (project.url + (project.data.relative_image_url | replace('./', ''))) }}"/>
+					{% else %}
+					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-25 rounded-box">
+						<path stroke-linecap="round" stroke-linejoin="round" d="m6.75 7.5 3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0 0 21 18V6a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 6v12a2.25 2.25 0 0 0 2.25 2.25Z" />
+					</svg>
+					{% endif %}
+				</a>
+			</div>
+			<div>
+				<div>
+					<a href="{{ project.url }}">{{ project.data.title }}</a>
+				</div>
+				<div class="text-xs uppercase font-semibold opacity-60">{{ project.date | readableDate("MMMM yyyy") }}</div>
+				<p class="list-col-wrap text-xs">
+					{{ project.data.description }}
+				</p>
+			</div>
+			{%- if project.data.project_url %}
+				<a href="{{ project.data.project_url }}" class="btn btn-square btn-ghost text-info relative z-20">
+					{# Source: https://heroicons.com/ #}
+					<svg class="size-[1.5em]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+						<path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/>
+					</svg>
+				</a>
+			{%- endif %}
+			{%- if project.data.github_url %}
+				<a href="{{ project.data.github_url }}" class="btn btn-square btn-ghost">
+					<img class="size-[1.5em]" src="/img/github.svg" alt="GitHub"/>
+				</a>
+			{%- endif %}
+		</li>
+	{%- endfor %}
+</ul>

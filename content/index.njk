@@ -1,0 +1,52 @@
+---js
+const eleventyNavigation = {
+	key: "Home",
+	order: 1
+};
+
+const numberOfLatestPostsToShow = 6;
+const numberOfLatestProjectsToShow = 6;
+---
+<div class="hero-content flex-col lg:flex-row">
+  <div>
+    <h1 class="text-5xl font-bold mb-4">Hello! I'm Ryan!</h1>
+    <p class="mb-4">
+  I'm a Full Stack Software Engineer currently open for work, located near
+  San Francisco, CA. I graduated from UC Davis and have been programming 
+  as a hobby for over 15 years and professionally for around 10 years.
+</p>
+    <p class="mb-4">
+  I love creating things, and programming gives me a limitless canvas to build
+  anything I can imagine. Below you'll find some of my recent open source projects
+  and blog posts if I ever have time to write them.
+</p>
+    {# TODO: Change  to icons like GitHub, Email, Linked In or something #}
+  </div>
+</div>
+
+{% set projectsCount = collections.projects | length %}
+{% if projectsCount > 0 %}
+  {% set latestProjectsCount = projectsCount | min(numberOfLatestProjectsToShow) %}
+  <div class="divider text-3xl font-bold mt-12 mb-8">Recent Open Source Projects</div>
+  {% set projectslist = collections.projects | sort(false, false, 'data.homepage') | head(-1 * numberOfLatestProjectsToShow) %}
+  {% set projectslistCounter = projectsCount %}
+  {% include "projectslist.njk" %}
+  {% set moreProjects = projectsCount - numberOfLatestProjectsToShow %}
+  {% if moreProjects > 0 %}
+    <p>{{ moreProjects }} more project{% if moreProjects != 1 %}s{% endif %} can be found in the projects section.</p>
+  {% endif %}
+{% endif %}
+
+{% set postsCount = collections.posts | length %}
+{% if postsCount > 0 %}
+  {% set latestPostsCount = postsCount | min(numberOfLatestPostsToShow) %}
+  <div class="divider text-3xl font-bold mt-12 mb-8">Recent Blog Posts</div>
+  {% set postslist = collections.posts | head(-1 * numberOfLatestPostsToShow) %}
+  {% set postslistCounter = postsCount %}
+  {% include "postslist.njk" %}
+
+  {% set morePosts = postsCount - numberOfLatestPostsToShow %}
+  {% if morePosts > 0 %}
+    <p>{{ morePosts }} more post{% if morePosts != 1 %}s{% endif %} can be found in <a href="blog.njk">the archive</a>.</p>
+  {% endif %}
+{% endif %}
