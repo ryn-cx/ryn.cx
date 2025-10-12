@@ -38,8 +38,7 @@ jobs:
 
 
       - run: npm install
-      - run: npm run build-ghpages
-
+      - run: npm run build-ghp
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         if: github.ref == 'refs/heads/main'
