@@ -31,7 +31,7 @@ layout: layouts/base.njk
 <div class="flex justify-center gap-6 mt-6 mb-8">
 	{% if project_url %}
 		<a href="{{ project_url }}" target="_blank">
-			<button class="btn btn-outline btn-info">
+			<button class="btn btn-outline btn-info btn-sm sm:btn-md">
 				{# Source: https://heroicons.com #}
 				<svg class="size-[1.5em]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
 					<path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/>
@@ -42,8 +42,8 @@ layout: layouts/base.njk
 	{% endif %}
 	{% if github_url %}
 		<a href="{{ github_url }}" target="_blank">
-			<button class="btn btn-outline btn-info">
-				<img src="/img/github.svg" class="size-[1.5em]" alt="GitHub">
+			<button class="btn btn-outline btn-info btn-sm sm:btn-md">
+				<img src="/img/github.svg" class="w-4 h-4 sm:w-6 sm:h-6" alt="GitHub">
 			GitHub
 			</button>
 		</a>
