@@ -1,6 +1,6 @@
 ---
 title: DeGenSON
-description: A fork of GenSON that adds additional schema strategies for Python types that map directly to JSON Schema formats.
+description: Fork of GenSON that adds additional schema strategies for Python types that map directly to JSON Schema formats.
 date: 2025-09-22
 github_url: https://github.com/ryn-cx/DeGenSON
 homepage: 0
@@ -11,6 +11,7 @@ code: example.py
 
 DeGenSON is a fork of [GenSON](https://github.com/wolverdude/GenSON) that adds
 additional schema strategies for Python types that map directly to JSON Schema formats.
+
 
 ## Supported Additional Strategies
 
