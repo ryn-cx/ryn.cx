@@ -5,7 +5,7 @@ date: 2023-05-22
 github_url: https://github.com/ryn-cx/obsidian-theme-previews
 project_url: https://actualexclusives.com/
 image: actual-exclusives.png
-homepage: 1
+priority: 2
 ---
 <!-- TODO: Fix ActualExclusives.Com to allow iframes -->
 

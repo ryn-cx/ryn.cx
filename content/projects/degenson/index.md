@@ -3,7 +3,7 @@ title: DeGenSON
 description: Fork of GenSON that adds additional schema strategies for Python types that map directly to JSON Schema formats.
 date: 2025-09-22
 github_url: https://github.com/ryn-cx/DeGenSON
-homepage: 0
+priority: 3
 code: example.py
 ---
 

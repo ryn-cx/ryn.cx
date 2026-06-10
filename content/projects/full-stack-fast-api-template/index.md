@@ -5,7 +5,7 @@ date: 2025-07-04
 github_url: https://github.com/ryn-cx/full-stack-fastapi-template
 iframe: https://kon.cx/
 image: full-stack-fastapi-template.png
-homepage: 1
+priority: 2
 ---
 
 ## Overview

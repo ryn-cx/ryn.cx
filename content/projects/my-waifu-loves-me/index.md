@@ -6,7 +6,7 @@ github_url: https://github.com/ryn-cx/my-waifu-loves-me
 project_url: https://mywaifuloves.me/
 iframe: https://mywaifuloves.me/?ids=[%2210165%22%2C%22181841%22%2C%2298444%22]
 image: my-waifu-loves-me.png
-homepage: 1
+priority: 1
 ---
 
 ## Overview
@@ -19,14 +19,13 @@ results based on anime/manga they have or have not read/watched.
 
 ## Why
 
-Sometimes I want to watch an anime similar to a specific mix of titles, like anime X, Y,
-and Z all at once, but there has never been a good way to find one. The only reasonable
-option was asking an AI, but the results were really disappointing and usually only
-included the most mainstream anime, so I decided to build something better. Now I can
-look up anime similar to X, Y, and Z and get a graph of recommendations that share
-elements from all three. It makes finding something new to watch easy even when I don't
-keep up with what shows are coming out.
+Sometimes you want to watch an anime similar to a specific mix of titles, like anime X,
+Y, and Z all at once, but there has never been a good way to find one. The only
+reasonable option was asking an AI, but the results were really disappointing and usually
+only included the most mainstream anime, so My Waifu Loves Me was built to do better. Now
+you can look up anime similar to X, Y, and Z and get a graph of recommendations that
+share elements from all three. It makes finding something new to watch easy even without
+keeping up with what shows are coming out.
 
-I also really like the feeling of exploring the graph. I have slowly built up a bigger
-and bigger graph as I add more entries, and its color slowly changes from gray (anime I
-have never seen) to a colorful rainbow.
+Exploring the graph is satisfying in its own right. It grows bigger as more entries are
+added, and its color slowly changes from gray for unseen anime to a colorful rainbow.

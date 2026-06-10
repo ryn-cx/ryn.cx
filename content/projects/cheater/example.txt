@@ -1,0 +1,25 @@
+cheater ffmpeg
+┃ 'ffmpeg' — pick a cheat or action
+┃       2. Convert all .m4a files in the current dir to .mp3
+┃         $ for f in *.m4a; do ffmpeg -i "$f" -acodec libmp3lame -vn -b:a 320k "${f%.m4a}.mp3"; done
+┃ >     3. Combine separate video and audio tracks into one file (no re-encode)
+┃         $ ffmpeg -i <video> -i <audio> -c:v copy -c:a copy <output>
+┃       4. Burn an .ass subtitle track into a video
+┃         $ ffmpeg -i <input> -vf ass=<subtitle> <output>
+┃       5. Convert WebM to MP4
+┃         $ ffmpeg -i <input> <output>
+┃       6. Repackage MP4 to MOV without re-encoding
+┃         $ ffmpeg -i <input> -acodec copy -vcodec copy -f mov <output>
+┃       7. Repackage MOV to MP4 without re-encoding
+┃         $ ffmpeg -i <input> -vcodec copy -acodec copy <output>
+┃       8. Render an image sequence as a video (glob, vp9)
+┃         $ ffmpeg -r <fps> -pattern_type glob -i '<glob>' -b:v <bitrate> -s hd1080 -vcodec vp9 -an -pix_fmt yuv420p -
+┃   deinterlace <output>
+┃       9. Extract a chunk of audio from a video file and pipe to ffplay
+┃         $ ffmpeg -ss <start> -t <duration> -i <input> -f mp3 pipe:play | ffplay -i pipe:play -autoexit
+┃      10. Concatenate files listed in a text file (codec copy)
+┃         $ ffmpeg -f concat -safe 0 -i <list> -c copy <output>
+┃    +  Add a new cheat
+┃    ~  Edit a personal cheat
+┃    -  Remove a personal cheat
+┃ >  q  Quit
