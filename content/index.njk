@@ -34,7 +34,7 @@ const numberOfLatestProjectsToShow = 6;
   {% include "projectslist.njk" %}
   {% set moreProjects = projectsCount - numberOfLatestProjectsToShow %}
   {% if moreProjects > 0 %}
-    <p>{{ moreProjects }} more project{% if moreProjects != 1 %}s{% endif %} can be found in the projects section.</p>
+    <p>{{ moreProjects }} more project{% if moreProjects != 1 %}s{% endif %} can be found in <a href="/projects/">the projects section</a>.</p>
   {% endif %}
 {% endif %}
 
