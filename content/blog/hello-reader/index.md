@@ -6,5 +6,5 @@ image: todo.jpg
 ---
 ![Todo](todo.jpg)
 
-This is a simple first post mostly to test how blog posts are displayed. In the future I
-may 
+This is a simple first post mostly to test how blog posts are displayed. More may follow
+in the future.

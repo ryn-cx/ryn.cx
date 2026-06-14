@@ -1,3 +1,4 @@
+// TODO: Validate
 import { DateTime } from "luxon";
 
 export default function(eleventyConfig) {
@@ -26,6 +27,35 @@ export default function(eleventyConfig) {
 	// Return the smallest number argument
 	eleventyConfig.addFilter("min", (...numbers) => {
 		return Math.min.apply(null, numbers);
+	});
+
+	// Sort a collection by `priority` front matter (lowest tier number first, i.e.
+	// Tier 1 before Tier 2), then by date (newest first) to break ties.
+	eleventyConfig.addFilter("sortByPriority", (collection) => {
+		return [...collection].sort((a, b) =>
+			((a.data.priority ?? 0) - (b.data.priority ?? 0)) || (b.date - a.date)
+		);
+	});
+
+	// Group a collection into tiers by `priority` front matter. Returns an array
+	// of groups (lowest tier number first, i.e. Tier 1 before Tier 2), each group
+	// being the list of projects sharing that priority, sorted newest first within
+	// the tier.
+	eleventyConfig.addFilter("groupByPriority", (collection) => {
+		const sorted = [...collection].sort((a, b) =>
+			((a.data.priority ?? 0) - (b.data.priority ?? 0)) || (b.date - a.date)
+		);
+		const groups = [];
+		let current = null;
+		for (const project of sorted) {
+			const priority = project.data.priority ?? 0;
+			if (!current || current.priority !== priority) {
+				current = { priority, projects: [] };
+				groups.push(current);
+			}
+			current.projects.push(project);
+		}
+		return groups;
 	});
 
 	// Return the keys used in an object

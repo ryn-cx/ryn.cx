@@ -1,0 +1,14 @@
+{# TODO: Validate #}
+---js
+const eleventyNavigation = {
+	key: "Projects",
+	order: 2
+};
+---
+{# Render each priority tier as its own list card, with a heading, so the groups are
+   visually distinct. #}
+{% for group in collections.projects | groupByPriority %}
+	<h2 class="text-2xl font-bold mt-10 mb-4">Tier {{ group.priority }} Projects</h2>
+	{% set projectslist = group.projects %}
+	{% include "projectslist.njk" %}
+{% endfor %}

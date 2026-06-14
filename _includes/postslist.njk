@@ -1,8 +1,14 @@
-<ol reversed class="postlist" style="--postlist-index: {{ (postslistCounter or postslist.length) + 1 }}">
-{%- for post in postslist | reverse %}
-	<li class="postlist-item{% if post.url == url %} postlist-item-active{% endif %}">
-		<a href="{{ post.url }}" class="postlist-link">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</a>
-		<time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate("LLLL yyyy") }}</time>
-	</li>
-{%- endfor %}
-</ol>
+{# TODO: Validate #}
+<div class="grid grid-cols-3 gap-4">
+	{%- for post in postslist | reverse %}
+		<a href="{{ post.url }}" class="relative overflow-hidden block group">
+			{%- if post.data.image %}
+			<img class="w-full h-full object-cover transition-transform group-hover:scale-110" src="{{ post.url }}{{ post.data.image }}" alt="{{ post.data.title }}"/>
+			{%- endif %}
+			<div class="absolute bottom-0 left-0 right-0 text-white p-2 z-10 opacity-90" style="background-color: rgba(0, 0, 0, 0.75);">
+				<h3 class="text-sm font-semibold">{{ post.data.title }}</h3>
+				<p class="text-xs opacity-90">{{ post.date | readableDate("DD") }}</p>
+			</div>
+		</a>
+	{%- endfor %}
+</div>

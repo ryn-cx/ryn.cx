@@ -1,18 +1,49 @@
+// TODO: Validate
 import { IdAttributePlugin, InputPathToUrlTransformPlugin, HtmlBasePlugin } from "@11ty/eleventy";
 import { feedPlugin } from "@11ty/eleventy-plugin-rss";
-import pluginSyntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import pluginNavigation from "@11ty/eleventy-navigation";
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
+import { codeToHtml } from "shiki";
+import shikiMarkdownIt from "@shikijs/markdown-it";
 
 import pluginFilters from "./_config/filters.js";
 
+import fs from 'fs';
+import path from 'path';
+import postcss from 'postcss';
+import tailwindcss from '@tailwindcss/postcss';
+
+const SHIKI_THEME = "one-dark-pro";
+
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 export default async function(eleventyConfig) {
+	// Tailwind CSS processing
+	eleventyConfig.on('eleventy.before', async () => {
+		const tailwindInputPath = path.resolve('./css/index.css');
+		const tailwindOutputPath = './dist/styles/index.css';
+		
+		if (fs.existsSync(tailwindInputPath)) {
+			const cssContent = fs.readFileSync(tailwindInputPath, 'utf8');
+			const outputDir = path.dirname(tailwindOutputPath);
+
+			if (!fs.existsSync(outputDir)) {
+				fs.mkdirSync(outputDir, { recursive: true });
+			}
+
+			const result = await postcss([tailwindcss()]).process(cssContent, {
+				from: tailwindInputPath,
+				to: tailwindOutputPath,
+			});
+
+			fs.writeFileSync(tailwindOutputPath, result.css);
+		}
+	});
+
 	// Drafts, see also _data/eleventyDataSchema.js
 	eleventyConfig.addPreprocessor("drafts", "*", (data, content) => {
 		if (data.draft) {
-			data.title = `${data.title} (draft)`;
-		}
+      data.title = `${data.title} (draft)`;
+    }
 
 		if(data.draft && process.env.ELEVENTY_RUN_MODE === "build") {
 			return false;
@@ -23,7 +54,8 @@ export default async function(eleventyConfig) {
 	// For example, `./public/css/` ends up in `_site/css/`
 	eleventyConfig
 		.addPassthroughCopy({
-			"./public/": "/"
+			"./public/": "/",
+			"./node_modules/winbox/dist/img/": "/winbox-img/"
 		})
 		.addPassthroughCopy("./content/feed/pretty-atom-feed.xsl");
 
@@ -52,10 +84,18 @@ export default async function(eleventyConfig) {
 		bundleHtmlContentFromSelector: "script",
 	});
 
-	// Official plugins
-	eleventyConfig.addPlugin(pluginSyntaxHighlight, {
-		preAttributes: { tabindex: 0 }
+	// Syntax highlighting via Shiki (build-time, inline styles)
+	const shikiMd = await shikiMarkdownIt({ theme: SHIKI_THEME });
+	eleventyConfig.amendLibrary("md", (mdLib) => mdLib.use(shikiMd));
+
+	eleventyConfig.addPairedShortcode("highlight", async (content, lang) => {
+		return await codeToHtml(content.trim(), {
+			lang: lang || "plaintext",
+			theme: SHIKI_THEME,
+		});
 	});
+
+	// Official plugins
 	eleventyConfig.addPlugin(pluginNavigation);
 	eleventyConfig.addPlugin(HtmlBasePlugin);
 	eleventyConfig.addPlugin(InputPathToUrlTransformPlugin);
@@ -64,12 +104,6 @@ export default async function(eleventyConfig) {
 		type: "atom", // or "rss", "json"
 		outputPath: "/feed/feed.xml",
 		stylesheet: "pretty-atom-feed.xsl",
-		templateData: {
-			eleventyNavigation: {
-				key: "Feed",
-				order: 4
-			}
-		},
 		collection: {
 			name: "posts",
 			limit: 10,
