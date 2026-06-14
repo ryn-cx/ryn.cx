@@ -1,0 +1,65 @@
+
+---
+layout: layouts/base.njk
+---
+<div class="flex items-center justify-center gap-4 mb-4 flex-wrap">
+	<h1 class="text-5xl font-bold" id="cheater">Cheater</h1>
+	
+	
+		<a href="https://github.com/ryn-cx/cheater" target="_blank">
+			<button class="btn btn-outline btn-info">
+				<svg class="size-[1.5em]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 98 96" fill="currentColor">
+					<path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z"></path>
+				</svg>
+				GitHub
+			</button>
+		</a>
+	
+</div>
+
+
+<div class="winbox-placeholder w-full h-100" data-title="Cheater">
+	<div class="winbox-content" hidden="">
+		
+<pre class="shiki one-dark-pro" style="background-color:#282c34;color:#abb2bf" tabindex="0"><code><span class="line"><span style="color:#ABB2BF">cheater ffmpeg</span></span>
+<span class="line"><span style="color:#ABB2BF">┃ </span><span style="color:#98C379">'ffmpeg'</span><span style="color:#ABB2BF"> — pick a cheat </span><span style="color:#C678DD">or</span><span style="color:#ABB2BF"> action</span></span>
+<span class="line"><span style="color:#ABB2BF">┃       </span><span style="color:#D19A66">2</span><span style="color:#ABB2BF">. Convert </span><span style="color:#56B6C2">all</span><span style="color:#ABB2BF"> .m4a files </span><span style="color:#C678DD">in</span><span style="color:#ABB2BF"> the current </span><span style="color:#56B6C2">dir</span><span style="color:#ABB2BF"> to .mp3</span></span>
+<span class="line"><span style="color:#ABB2BF">┃         </span><span style="color:#FFFFFF">$</span><span style="color:#C678DD"> for</span><span style="color:#ABB2BF"> f </span><span style="color:#C678DD">in</span><span style="color:#56B6C2"> *</span><span style="color:#ABB2BF">.m4a; do ffmpeg </span><span style="color:#56B6C2">-</span><span style="color:#ABB2BF">i </span><span style="color:#98C379">"$f"</span><span style="color:#56B6C2"> -</span><span style="color:#ABB2BF">acodec libmp3lame </span><span style="color:#56B6C2">-</span><span style="color:#ABB2BF">vn </span><span style="color:#56B6C2">-</span><span style="color:#ABB2BF">b:a </span><span style="color:#FFFFFF">320k</span><span style="color:#98C379"> "${f%.m4a}.mp3"</span><span style="color:#ABB2BF">; done</span></span>
+<span class="line"><span style="color:#ABB2BF">┃ </span><span style="color:#56B6C2">></span><span style="color:#D19A66">     3</span><span style="color:#ABB2BF">. Combine separate video </span><span style="color:#C678DD">and</span><span style="color:#ABB2BF"> audio tracks into one </span><span style="color:#E06C75">file</span><span style="color:#ABB2BF"> (no re</span><span style="color:#56B6C2">-</span><span style="color:#ABB2BF">encode)</span></span>
+<span class="line"><span style="color:#ABB2BF">┃         </span><span style="color:#FFFFFF">$</span><span style="color:#ABB2BF"> ffmpeg </span><span style="color:#56B6C2">-</span><span style="color:#ABB2BF">i </span><span style="color:#56B6C2">&#x3C;</span><span style="color:#ABB2BF">video</span><span style="color:#56B6C2">></span><span style="color:#56B6C2"> -</span><span style="color:#ABB2BF">i </span><span style="color:#56B6C2">&#x3C;</span><span style="color:#ABB2BF">audio</span><span style="color:#56B6C2">></span><span style="color:#56B6C2"> -</span><span style="color:#ABB2BF">c:v copy </span><span style="color:#56B6C2">-</span><span style="color:#ABB2BF">c:a copy </span><span style="color:#56B6C2">&#x3C;</span><span style="color:#ABB2BF">output</span><span style="color:#56B6C2">></span></span>
+<span class="line"><span style="color:#ABB2BF">┃       </span><span style="color:#D19A66">4</span><span style="color:#ABB2BF">. Burn an .ass subtitle track into a video</span></span>
+<span class="line"><span style="color:#ABB2BF">┃         </span><span style="color:#FFFFFF">$</span><span style="color:#ABB2BF"> ffmpeg </span><span style="color:#56B6C2">-</span><span style="color:#ABB2BF">i </span><span style="color:#56B6C2">&#x3C;input></span><span style="color:#56B6C2"> -</span><span style="color:#ABB2BF">vf ass</span><span style="color:#56B6C2">=&#x3C;</span><span style="color:#ABB2BF">subtitle</span><span style="color:#56B6C2">></span><span style="color:#56B6C2"> &#x3C;</span><span style="color:#ABB2BF">output</span><span style="color:#56B6C2">></span></span>
+<span class="line"><span style="color:#ABB2BF">┃       </span><span style="color:#D19A66">5</span><span style="color:#ABB2BF">. Convert WebM to </span><span style="color:#D19A66">MP4</span></span>
+<span class="line"><span style="color:#ABB2BF">┃         </span><span style="color:#FFFFFF">$</span><span style="color:#ABB2BF"> ffmpeg </span><span style="color:#56B6C2">-</span><span style="color:#ABB2BF">i </span><span style="color:#56B6C2">&#x3C;input></span><span style="color:#56B6C2"> &#x3C;</span><span style="color:#ABB2BF">output</span><span style="color:#56B6C2">></span></span>
+<span class="line"><span style="color:#ABB2BF">┃       </span><span style="color:#D19A66">6</span><span style="color:#ABB2BF">. Repackage </span><span style="color:#D19A66">MP4</span><span style="color:#ABB2BF"> to </span><span style="color:#D19A66">MOV</span><span style="color:#ABB2BF"> without re</span><span style="color:#56B6C2">-</span><span style="color:#ABB2BF">encoding</span></span>
+<span class="line"><span style="color:#ABB2BF">┃         </span><span style="color:#FFFFFF">$</span><span style="color:#ABB2BF"> ffmpeg </span><span style="color:#56B6C2">-</span><span style="color:#ABB2BF">i </span><span style="color:#56B6C2">&#x3C;input></span><span style="color:#56B6C2"> -</span><span style="color:#ABB2BF">acodec copy </span><span style="color:#56B6C2">-</span><span style="color:#ABB2BF">vcodec copy </span><span style="color:#56B6C2">-</span><span style="color:#ABB2BF">f mov </span><span style="color:#56B6C2">&#x3C;</span><span style="color:#ABB2BF">output</span><span style="color:#56B6C2">></span></span>
+<span class="line"><span style="color:#ABB2BF">┃       </span><span style="color:#D19A66">7</span><span style="color:#ABB2BF">. Repackage </span><span style="color:#D19A66">MOV</span><span style="color:#ABB2BF"> to </span><span style="color:#D19A66">MP4</span><span style="color:#ABB2BF"> without re</span><span style="color:#56B6C2">-</span><span style="color:#ABB2BF">encoding</span></span>
+<span class="line"><span style="color:#ABB2BF">┃         </span><span style="color:#FFFFFF">$</span><span style="color:#ABB2BF"> ffmpeg </span><span style="color:#56B6C2">-</span><span style="color:#ABB2BF">i </span><span style="color:#56B6C2">&#x3C;input></span><span style="color:#56B6C2"> -</span><span style="color:#ABB2BF">vcodec copy </span><span style="color:#56B6C2">-</span><span style="color:#ABB2BF">acodec copy </span><span style="color:#56B6C2">&#x3C;</span><span style="color:#ABB2BF">output</span><span style="color:#56B6C2">></span></span>
+<span class="line"><span style="color:#ABB2BF">┃       </span><span style="color:#D19A66">8</span><span style="color:#ABB2BF">. Render an image sequence </span><span style="color:#C678DD">as</span><span style="color:#ABB2BF"> a </span><span style="color:#61AFEF">video</span><span style="color:#ABB2BF"> (glob, vp9)</span></span>
+<span class="line"><span style="color:#ABB2BF">┃         </span><span style="color:#FFFFFF">$</span><span style="color:#ABB2BF"> ffmpeg </span><span style="color:#56B6C2">-</span><span style="color:#ABB2BF">r </span><span style="color:#56B6C2">&#x3C;</span><span style="color:#ABB2BF">fps</span><span style="color:#56B6C2">></span><span style="color:#56B6C2"> -</span><span style="color:#ABB2BF">pattern_type glob </span><span style="color:#56B6C2">-</span><span style="color:#ABB2BF">i </span><span style="color:#98C379">'&#x3C;glob>'</span><span style="color:#56B6C2"> -</span><span style="color:#ABB2BF">b:v </span><span style="color:#56B6C2">&#x3C;</span><span style="color:#ABB2BF">bitrate</span><span style="color:#56B6C2">></span><span style="color:#56B6C2"> -</span><span style="color:#ABB2BF">s hd1080 </span><span style="color:#56B6C2">-</span><span style="color:#ABB2BF">vcodec vp9 </span><span style="color:#56B6C2">-</span><span style="color:#ABB2BF">an </span><span style="color:#56B6C2">-</span><span style="color:#ABB2BF">pix_fmt yuv420p </span><span style="color:#56B6C2">-</span></span>
+<span class="line"><span style="color:#ABB2BF">┃   deinterlace </span><span style="color:#56B6C2">&#x3C;</span><span style="color:#ABB2BF">output</span><span style="color:#56B6C2">></span></span>
+<span class="line"><span style="color:#ABB2BF">┃       </span><span style="color:#D19A66">9</span><span style="color:#ABB2BF">. Extract a chunk of audio </span><span style="color:#C678DD">from</span><span style="color:#ABB2BF"> a video </span><span style="color:#E06C75">file</span><span style="color:#C678DD"> and</span><span style="color:#ABB2BF"> pipe to ffplay</span></span>
+<span class="line"><span style="color:#ABB2BF">┃         </span><span style="color:#FFFFFF">$</span><span style="color:#ABB2BF"> ffmpeg </span><span style="color:#56B6C2">-</span><span style="color:#ABB2BF">ss </span><span style="color:#56B6C2">&#x3C;</span><span style="color:#ABB2BF">start</span><span style="color:#56B6C2">></span><span style="color:#56B6C2"> -</span><span style="color:#ABB2BF">t </span><span style="color:#56B6C2">&#x3C;</span><span style="color:#ABB2BF">duration</span><span style="color:#56B6C2">></span><span style="color:#56B6C2"> -</span><span style="color:#ABB2BF">i </span><span style="color:#56B6C2">&#x3C;input></span><span style="color:#56B6C2"> -</span><span style="color:#ABB2BF">f mp3 pipe:play </span><span style="color:#56B6C2">|</span><span style="color:#ABB2BF"> ffplay </span><span style="color:#56B6C2">-</span><span style="color:#ABB2BF">i pipe:play </span><span style="color:#56B6C2">-</span><span style="color:#ABB2BF">autoexit</span></span>
+<span class="line"><span style="color:#ABB2BF">┃      </span><span style="color:#D19A66">10</span><span style="color:#ABB2BF">. Concatenate files listed </span><span style="color:#C678DD">in</span><span style="color:#ABB2BF"> a text </span><span style="color:#E06C75">file</span><span style="color:#ABB2BF"> (codec copy)</span></span>
+<span class="line"><span style="color:#ABB2BF">┃         </span><span style="color:#FFFFFF">$</span><span style="color:#ABB2BF"> ffmpeg </span><span style="color:#56B6C2">-</span><span style="color:#ABB2BF">f concat </span><span style="color:#56B6C2">-</span><span style="color:#ABB2BF">safe </span><span style="color:#D19A66">0</span><span style="color:#56B6C2"> -</span><span style="color:#ABB2BF">i </span><span style="color:#56B6C2">&#x3C;list></span><span style="color:#56B6C2"> -</span><span style="color:#ABB2BF">c copy </span><span style="color:#56B6C2">&#x3C;</span><span style="color:#ABB2BF">output</span><span style="color:#56B6C2">></span></span>
+<span class="line"><span style="color:#ABB2BF">┃    </span><span style="color:#56B6C2">+</span><span style="color:#ABB2BF">  Add a new cheat</span></span>
+<span class="line"><span style="color:#ABB2BF">┃    </span><span style="color:#56B6C2">~</span><span style="color:#ABB2BF">  Edit a personal cheat</span></span>
+<span class="line"><span style="color:#ABB2BF">┃    </span><span style="color:#56B6C2">-</span><span style="color:#ABB2BF">  Remove a personal cheat</span></span>
+<span class="line"><span style="color:#ABB2BF">┃ </span><span style="color:#56B6C2">></span><span style="color:#ABB2BF">  q  Quit</span></span></code></pre>
+		
+	</div>
+</div>
+
+
+<div class="prose prose-lg max-w-none mt-8">
+	<h2 id="overview">Overview</h2>
+<p>Cheater is a command-line cheat sheet tool that also builds and runs the commands for
+you using an interactive menu.</p>
+<h2 id="inspiration">Inspiration</h2>
+<p>Inspired by <a href="https://github.com/cheat/cheat">cheat</a>, Cheater is basically an alternative
+version of cheat that is able to build and run command templates instead of just listing
+the commands.</p>
+
+</div>
+
+

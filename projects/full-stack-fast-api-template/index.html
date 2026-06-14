@@ -1,0 +1,100 @@
+
+---
+layout: layouts/base.njk
+---
+<div class="flex items-center justify-center gap-4 mb-4 flex-wrap">
+	<h1 class="text-5xl font-bold" id="full-stack-fastapi-template">Full Stack FastAPI Template</h1>
+	
+	
+		<a href="https://github.com/ryn-cx/full-stack-fastapi-template" target="_blank">
+			<button class="btn btn-outline btn-info">
+				<svg class="size-[1.5em]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 98 96" fill="currentColor">
+					<path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z"></path>
+				</svg>
+				GitHub
+			</button>
+		</a>
+	
+</div>
+
+
+<div class="winbox-placeholder w-full h-100" data-title="Full Stack FastAPI Template">
+	<div class="winbox-content" hidden="">
+		
+		<iframe src="https://kon.cx/" class="w-full h-full" title="Full Stack FastAPI Template" loading="lazy"></iframe>
+		
+	</div>
+</div>
+
+
+<div class="prose prose-lg max-w-none mt-8">
+	<h2 id="overview">Overview</h2>
+<p>Full stack, modern web application template. Using FastAPI, React, SQLModel, PostgreSQL, Docker, GitHub Actions, automatic HTTPS and more following FastAPI Best Practices.</p>
+<h2 id="why">Why</h2>
+<p>There is an official <a href="https://github.com/fastapi/full-stack-fastapi-template">Full Stack FastAPI
+Template</a> that works really
+well, but it does not follow some of the commonly accepted <a href="https://github.com/zhanymkanov/fastapi-best-practices">FastAPI Best
+Practices</a>. This fork makes the
+project more closely follow these best practices as well as other minor quality of life
+improvements.</p>
+<h2 id="projects-using-this-template">Projects Using This Template</h2>
+<ul>
+<li><a href="/eleventy-base-blog/projects/old/my-waifu-loves-me/">My Waifu Loves Me</a></li>
+<li><a href="/eleventy-base-blog/projects/getcha-life-right/">Getcha Life Right</a></li>
+<li><a href="/eleventy-base-blog/projects/old/stream-channeler/">Stream Channeler</a></li>
+</ul>
+<h2 id="backend-changes-in-this-fork">Backend Changes in this Fork</h2>
+<ul>
+<li>📁 Restructure the project to more closely follow
+<a href="https://github.com/zhanymkanov/fastapi-best-practices">zhanymkanov/fastapi-best-practices</a>
+and <a href="https://github.com/Netflix/dispatch">Netflix/dispatch</a>.</li>
+<li>📧 Support case-insensitive email addresses.
+<ul>
+<li>The original template intentionally <a href="https://github.com/fastapi/full-stack-fastapi-template/pull/1450#issuecomment-2668483669">does not support case-insensitive email
+addresses</a>
+because <a href="https://www.rfc-editor.org/rfc/rfc5321#section-2.3.11">RFC 5321</a> allows
+email addresses to be case-sensitive. In practice, most websites ignore the
+standard for a smoother end-user experience.</li>
+</ul>
+</li>
+<li>⚡ (Optional) Automatically load models and routers based on the project folder structure.</li>
+<li>🧪 Run automated tests against a separate test database.
+<ul>
+<li>The original template ran backend tests against the local database, and would
+delete all entries when the tests completed. A dedicated test database leaves the
+local data intact so it can act as consistent reference data during development.</li>
+</ul>
+</li>
+<li>🏠 Default to the root domain instead of the dashboard subdomain.</li>
+<li>📙 Use timestamp-based file names for Alembic migrations.</li>
+</ul>
+<h2 id="frontend-changes-in-this-fork">Frontend Changes in this Fork</h2>
+<ul>
+<li>🤞 Optimistic updates when modifying items and users.</li>
+<li>📄 Client-side pagination, filtering, and sorting.
+<ul>
+<li>In the original template, the backend paginated results but the frontend had no
+way to load data past the first page. TanStack Table <a href="https://tanstack.com/table/v8/docs/guide/pagination">handles 100,000 rows
+comfortably</a>, and most
+projects using this template will stay well under that, so client-side pagination
+is the default. The backend pagination code is retained, so server-side
+pagination can be reinstated with minimal frontend changes if needed.</li>
+</ul>
+</li>
+<li>🧪 Run automated frontend tests against a dedicated test database in test-specific
+Docker containers.
+<ul>
+<li>This also fixes a local-only issue where a prior backend test run would delete
+the first superuser the frontend tests depend on, causing those tests to fail.</li>
+</ul>
+</li>
+</ul>
+<h2 id="other-changes">Other Changes</h2>
+<ul>
+<li>🏗️ Derive all port assignments from a configurable <code>PROJECT_NUMBER</code> so multiple
+projects using this template can run side by side without port conflicts.</li>
+</ul>
+
+</div>
+
+
