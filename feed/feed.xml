@@ -4,19 +4,19 @@
   
   <title>Blog Title</title>
   <subtitle>This is a longer description about your blog.</subtitle>
-  <link href="https://example.com/eleventy-base-blog/feed/feed.xml" rel="self" />
-  <link href="https://example.com/eleventy-base-blog/" />
+  <link href="https://example.com/feed/feed.xml" rel="self" />
+  <link href="https://example.com/" />
   <updated>2025-10-06T00:00:00Z</updated>
-  <id>https://example.com/eleventy-base-blog/</id>
+  <id>https://example.com/</id>
   <author>
     <name>Your Name</name>
   </author>
   <entry>
     <title>Hello, Reader</title>
-    <link href="https://example.com/eleventy-base-blog/blog/hello-reader/" />
+    <link href="https://example.com/blog/hello-reader/" />
     <updated>2025-10-06T00:00:00Z</updated>
-    <id>https://example.com/eleventy-base-blog/blog/hello-reader/</id>
-    <content type="html">&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://example.com/eleventy-base-blog/blog/hello-reader/zBvErRp8ig-4000.avif 4000w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://example.com/eleventy-base-blog/blog/hello-reader/zBvErRp8ig-4000.webp 4000w&quot;&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://example.com/eleventy-base-blog/blog/hello-reader/zBvErRp8ig-4000.jpeg&quot; alt=&quot;Todo&quot; width=&quot;4000&quot; height=&quot;3000&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
+    <id>https://example.com/blog/hello-reader/</id>
+    <content type="html">&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://example.com/blog/hello-reader/zBvErRp8ig-4000.avif 4000w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://example.com/blog/hello-reader/zBvErRp8ig-4000.webp 4000w&quot;&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://example.com/blog/hello-reader/zBvErRp8ig-4000.jpeg&quot; alt=&quot;Todo&quot; width=&quot;4000&quot; height=&quot;3000&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
 &lt;p&gt;This is a simple first post mostly to test how blog posts are displayed. More may follow
 in the future.&lt;/p&gt;
 </content>
